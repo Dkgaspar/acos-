@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image:url('fondo 4.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;/
+}
+#question {
+  color: white; 
+}
+.option-button {
+  background-color: white; 
+  color: black; 
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.option-button:hover {
+  background-color: white; 
+}
+
+#menu-button {
+  background-color: white;
+  color: black; 
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#menu-button:hover {
+  background-color: grey;
+}

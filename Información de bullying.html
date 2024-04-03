@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informac</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat');
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400, 600');
+
+        .Container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .Picture {
+            width: 300px;
+            height: 620px;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .Picture-img {
+            width: 100%;
+            height: auto;
+            max-height: 40%;
+            object-fit: cover;
+        }
+
+        .Picture-note {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px 24px;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .next-button, .prev-button {
+            background-color: red;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        .next-button:hover, .prev-button:hover {
+            background-color: darkred;
+        }
+
+        /* Other styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Caveat', serif;
+            overflow: hidden;
+            background: black;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 30px;
+            display: block;
+            text-align: center;
+            color: red;
+            font-weight: 500;
+        }
+
+        .made-with-love {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            font-size: 10px;
+            z-index: 9999;
+            font-family: arial;
+            color: #c74f2b;
+            font-weight: 600;
+        }
+
+        .made-with-love i {
+            font-style: normal;
+            font-size: 14px;
+            position: relative;
+            top: 2px;
+        }
+
+        .made-with-love a {
+            color: #c74f2b;
+            text-decoration: none;
+        }
+
+        .made-with-love a:hover {
+            text-decoration: underline;
+        }
+
+        .made-with-love .dribble img {
+            max-width: 100%;
+            width: 26px;
+            position: relative;
+            top: -2px;
+            vertical-align: middle;
+        }
+
+        .ocultar {
+            display: none;
+        }
+
+        /* Estilos para el botón de menú */
+        .menu-button {
+            background-color: green;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .menu-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <div class="Picture">
+          <h1>¿Qué es el bullying?</h1>
+            <img class="Picture-img" src="imagendelbullying.jpg" alt="Imagen 1"
+            style="width: 100%; height: 35%;">
+            <div class="Picture-note">"El bullying es un comportamiento agresivo repetitivo hacia alguien vulnerable, como insultos, amenazas o exclusión, con el objetivo de causar daño emocional o físico. Sucede en entornos como escuelas o en línea, donde el agresor busca ejercer poder sobre la víctima."</div>
+        </div>
+        <div class="Picture">
+          <h1>Causas del bullying</h1>
+            <img class="Picture-img" src="Causas.jpg" alt="Imagen 2"
+            style="width: 100%; height: 30%;">
+            <div class="Picture-note">
+"El bullying puede surgir por varias razones, como la falta de empatía, problemas familiares, experiencias de violencia previas, o un entorno escolar o laboral que tolera la agresión. Los acosadores pueden carecer de habilidades sociales adecuadas o sentir que pueden actuar sin consecuencias."</div>
+        </div>
+         <div class="Picture">
+           <h1>Consecuencias</h1>
+            <img class="Picture-img" src="consecuencia1.jpg" alt="Imagen 2"
+            style="width: 100%; height: 30%;">
+            <div class="Picture-note">"Las consecuencias del bullying pueden ser graves y variadas, incluyendo problemas emocionales como ansiedad, depresión y baja autoestima. También puede afectar el rendimiento académico, causar problemas de salud física y llevar a comportamientos autodestructivos o incluso al suicidio."</div>
+            </div>
+        <!-- Agrega más divs Picture según sea necesario -->
+
+        <!-- Botones para cambiar de cuadro -->
+        <div class="button-container">
+            <div>
+                <button class="prev-button">Anterior</button>
+            </div>
+            <div>
+                <button class="next-button">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Botón de menú -->
+        <a href="menú.html" class="menu-button">Menú</a>
+    </div>
+
+    <script>
+        const pictures = document.querySelectorAll('.Picture');
+        let currentPictureIndex = 0;
+        const nextButton = document.querySelector('.next-button');
+        const prevButton = document.querySelector('.prev-button');
+        const menuButton = document.querySelector('.menu-button');
+
+        function showPicture(index) {
+            pictures.forEach((picture, i) => {
+                if (i === index) {
+                    picture.style.display = 'block';
+                } else {
+                    picture.style.display = 'none';
+                }
+            });
+            if (index === 0) {
+                prevButton.style.display = 'none'; // Oculta el botón cuando estás en la primera imagen
+            } else {
+                prevButton.style.display = 'block'; // Muestra el botón en cualquier otra imagen
+            }
+            if (index === pictures.length - 1) {
+                nextButton.style.display = 'none'; // Oculta el botón cuando llegas al último cuadro
+                menuButton.style.display = 'block'; // Muestra el botón de menú cuando llegas al último cuadro
+            } else {
+                nextButton.style.display = 'block'; // Muestra el botón en cualquier otro caso
+                menuButton.style.display = 'none'; // Oculta el botón de menú en cualquier otro caso
+            }
+        }
+
+        nextButton.addEventListener('click', function() {
+            currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+            showPicture(currentPictureIndex);
+        });
+
+        prevButton.addEventListener('click', function() {
+            currentPictureIndex = (currentPictureIndex - 1 + pictures.length) % pictures.length;
+            showPicture(currentPictureIndex);
+        });
+
+        // Función para mostrar el primer cuadro al cargar la página
+        showPicture(currentPictureIndex);
+    </script>
+</body>
+</html>

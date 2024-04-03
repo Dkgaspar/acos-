@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paginaprincipal</title>
+   
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: "TIMES NEW ROMAN", sans-serif; 
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 48px;
+      color: Red;
+      margin: 20px 0;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu button {
+      width: 200px;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      color: black;
+      font-size: 24px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .menu button:hover {
+      background-color:white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="logo">
+      <img src="Villazón.jpg" alt="Logo 1">
+      <img src="DanielCampos.jpg" alt="Logo 3">
+    </div>
+    <h1 class="title">StopBully</h1>
+    
+    <img src="bullying.jpg" alt="Imagen" class="image">
+    <div class="menu">
+      <button onclick="window.location.href='menú.html'">Menú</button>
+    </div>
+  </div>
+</body>
+</html>
